@@ -67,7 +67,7 @@ public class DebetcardTest {
     void shouldLeaveNameEmpty() {
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] .input__control")).sendKeys("");
-        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("89173352555");
+        driver.findElement(By.cssSelector("[data-test-id=phone] .input__control")).sendKeys("+79173352555");
         driver.findElement(By.className("checkbox")).click();
         driver.findElement(By.tagName("button")).click();
 
@@ -86,7 +86,7 @@ public class DebetcardTest {
         driver.findElement(By.tagName("button")).click();
 
         String expected = "Поле обязательно для заполнения";
-        String actual = driver.findElement(By.cssSelector("[data-test-id=name] .input__sub")).getText().trim();
+        String actual = driver.findElement(By.cssSelector("[data-test-id=phone] .input__sub")).getText().trim();
 
         assertEquals(expected, actual);
     }
